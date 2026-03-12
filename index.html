@@ -439,13 +439,18 @@
       max-height: 0;
       overflow: hidden;
       opacity: 0;
-      transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;
+      transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;
     }
 
     .expandable-grid.expanded {
-      max-height: 3000px;
+      max-height: 8000px;
       opacity: 1;
       margin-top: 32px;
+    }
+
+    .expandable-grid--transformations {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 100%;
     }
 
     /* ── Video Testimonials ── */
@@ -592,6 +597,11 @@
         grid-template-columns: 1fr;
         max-width: 500px;
       }
+
+      .expandable-grid--transformations {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+      }
     }
 
     @media (max-width: 600px) {
@@ -668,6 +678,13 @@
       .expandable-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+      }
+
+      .expandable-grid--transformations {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .cta-section .btn {
@@ -785,6 +802,60 @@
       <!-- View More Button -->
       <div class="view-more-wrapper">
         <button class="btn btn--view-more" onclick="toggleTransformations(this)">View More Results <span class="arrow">&#9662;</span></button>
+      </div>
+
+      <!-- Hidden transformations grid -->
+      <div class="expandable-grid expandable-grid--transformations" id="more-transformations">
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-4.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-5.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-6.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-7.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-8.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-9.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-10.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-11.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-12.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-card__image">
+            <img src="transformation-13.png" alt="Client transformation" loading="lazy">
+          </div>
+        </div>
       </div>
 
     </div>
