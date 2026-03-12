@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MickMoves Coaching | Mobility x Strength x Aesthetics</title>
-  <meta name="description" content="Develop strength, mobility, and athleticism with a system designed to help you move better, look better, and feel better.">
+  <meta name="description" content="Develop strength, mobility, and aesthetics with a system designed to help you move better, look better, and feel better.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -147,9 +147,9 @@
     }
 
     .hero__title {
-      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-size: clamp(1.4rem, 3vw, 2.4rem);
       margin-bottom: 40px;
-      line-height: 1.2;
+      line-height: 1.3;
       font-weight: 600;
       text-transform: none;
       color: #e0e0e0;
@@ -383,6 +383,71 @@
       margin-top: 4px;
     }
 
+    /* ── View More Button ── */
+    .view-more-wrapper {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .btn--view-more {
+      background: transparent;
+      color: #7ec8c8;
+      border: 1px solid rgba(126,200,200,0.3);
+      padding: 16px 40px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn--view-more::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(126,200,200,0.08) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn--view-more:hover {
+      border-color: #7ec8c8;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(126,200,200,0.15);
+    }
+
+    .btn--view-more:hover::before {
+      opacity: 1;
+    }
+
+    .btn--view-more .arrow {
+      display: inline-block;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .btn--view-more.expanded .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* ── Expandable Grid ── */
+    .expandable-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 32px auto 0;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;
+    }
+
+    .expandable-grid.expanded {
+      max-height: 3000px;
+      opacity: 1;
+      margin-top: 32px;
+    }
+
     /* ── Video Testimonials ── */
     .video-testimonials {
       padding: 100px 24px;
@@ -402,19 +467,9 @@
       color: #7ec8c8;
     }
 
-    .video-testimonials__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr auto;
-      grid-template-rows: auto auto;
-      gap: 24px;
-      max-width: 1000px;
+    .video-testimonials__featured {
+      max-width: 800px;
       margin: 0 auto;
-    }
-
-    .video-testimonial--vertical {
-      grid-column: 3;
-      grid-row: 1 / 3;
-      max-width: 220px;
     }
 
     .video-testimonial {
@@ -430,10 +485,6 @@
       background: #111;
     }
 
-    .video-testimonial__wrapper--vertical {
-      padding-bottom: 177.78%; /* 9:16 aspect ratio */
-    }
-
     .video-testimonial__wrapper iframe,
     .video-testimonial__wrapper video {
       position: absolute;
@@ -444,26 +495,8 @@
       border: none;
     }
 
-    .video-testimonial__placeholder {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: #444;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
     .video-testimonial__info {
-      padding: 20px;
+      padding: 16px 20px;
     }
 
     .video-testimonial__name {
@@ -471,12 +504,6 @@
       font-weight: 700;
       font-size: 0.9rem;
       color: #fff;
-    }
-
-    .video-testimonial__desc {
-      font-size: 0.8rem;
-      color: #888;
-      margin-top: 4px;
     }
 
     /* ── Book Consultation CTA ── */
@@ -561,17 +588,9 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .video-testimonials__grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .video-testimonial--vertical {
-        grid-column: 1 / -1;
-        max-width: 250px;
-        margin: 0 auto;
+      .expandable-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
       }
     }
 
@@ -587,7 +606,7 @@
       }
 
       .hero__title {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
         margin-bottom: 32px;
       }
 
@@ -597,6 +616,12 @@
         letter-spacing: 1.5px;
         width: 100%;
         max-width: 100%;
+      }
+
+      .btn--view-more {
+        width: auto;
+        padding: 14px 32px;
+        font-size: 0.75rem;
       }
 
       .vsl {
@@ -640,15 +665,9 @@
         gap: 16px;
       }
 
-      .video-testimonials__grid {
+      .expandable-grid {
         grid-template-columns: 1fr;
-        max-width: 100%;
-        gap: 20px;
-      }
-
-      .video-testimonial--vertical {
-        max-width: 200px;
-        margin: 0 auto;
+        gap: 16px;
       }
 
       .cta-section .btn {
@@ -696,7 +715,7 @@
       <img src="logo.png" alt="MickMoves Coaching" class="hero__logo">
       <p class="hero__tagline">Mobility <span>&times;</span> Strength <span>&times;</span> Aesthetics</p>
       <h1 class="hero__title">
-        Develop strength, mobility, and athleticism with a system designed to help you move better, look better, and feel better.
+        Develop strength, mobility, and aesthetics with a system designed to help you move better, look better, and feel better.
       </h1>
       <div class="hero__cta-wrapper">
         <a href="https://tally.so/r/PdEg7d" target="_blank" rel="noopener" class="btn btn--primary">Apply Now</a>
@@ -762,6 +781,12 @@
         </div>
 
       </div>
+
+      <!-- View More Button -->
+      <div class="view-more-wrapper">
+        <button class="btn btn--view-more" onclick="toggleTransformations(this)">View More Results <span class="arrow">&#9662;</span></button>
+      </div>
+
     </div>
   </section>
 
@@ -775,23 +800,69 @@
         <div class="divider"></div>
         <h2>Video <span class="highlight">Testimonials</span></h2>
       </div>
-      <div class="video-testimonials__grid">
-        <!-- Video Testimonial 1 -->
-        <div class="video-testimonial animate">
+
+      <!-- Featured: Jackson -->
+      <div class="video-testimonials__featured animate">
+        <div class="video-testimonial">
           <div class="video-testimonial__wrapper">
             <iframe src="https://www.youtube-nocookie.com/embed/OLWU6sfEBSs?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-        </div>
-        <!-- Video Testimonial 2 -->
-        <div class="video-testimonial animate delay-1">
-          <div class="video-testimonial__wrapper">
-            <iframe src="https://www.youtube-nocookie.com/embed/t2eSDOq3yUk?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="video-testimonial__info">
+            <div class="video-testimonial__name">Jackson</div>
           </div>
         </div>
-        <!-- Video Testimonial 3 (Short / Vertical) -->
-        <div class="video-testimonial video-testimonial--vertical animate delay-2">
-          <div class="video-testimonial__wrapper video-testimonial__wrapper--vertical">
-            <iframe src="https://www.youtube-nocookie.com/embed/z9__ApOF99Y?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <!-- View More Button -->
+      <div class="view-more-wrapper">
+        <button class="btn btn--view-more" onclick="toggleTestimonials(this)">View More Testimonials <span class="arrow">&#9662;</span></button>
+      </div>
+
+      <!-- Hidden testimonials grid -->
+      <div class="expandable-grid" id="more-testimonials">
+        <!-- Marc -->
+        <div class="video-testimonial">
+          <div class="video-testimonial__wrapper">
+            <iframe data-src="https://www.youtube-nocookie.com/embed/e0gMDpFTOAE?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-testimonial__info">
+            <div class="video-testimonial__name">Marc</div>
+          </div>
+        </div>
+        <!-- Jen -->
+        <div class="video-testimonial">
+          <div class="video-testimonial__wrapper">
+            <iframe data-src="https://www.youtube-nocookie.com/embed/z9__ApOF99Y?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-testimonial__info">
+            <div class="video-testimonial__name">Jen</div>
+          </div>
+        </div>
+        <!-- Shane -->
+        <div class="video-testimonial">
+          <div class="video-testimonial__wrapper">
+            <iframe data-src="https://www.youtube-nocookie.com/embed/OXIF7KzZtHE?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-testimonial__info">
+            <div class="video-testimonial__name">Shane</div>
+          </div>
+        </div>
+        <!-- Joe -->
+        <div class="video-testimonial">
+          <div class="video-testimonial__wrapper">
+            <iframe data-src="https://www.youtube-nocookie.com/embed/GYoN0LrniUo?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-testimonial__info">
+            <div class="video-testimonial__name">Joe</div>
+          </div>
+        </div>
+        <!-- Santiago -->
+        <div class="video-testimonial">
+          <div class="video-testimonial__wrapper">
+            <iframe data-src="https://www.youtube-nocookie.com/embed/W722cnyllkI?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-testimonial__info">
+            <div class="video-testimonial__name">Santiago</div>
           </div>
         </div>
       </div>
@@ -804,9 +875,8 @@
       <p class="section-label">Take the First Step</p>
       <div class="divider"></div>
       <h2>Ready to <span class="highlight">Transform</span>?</h2>
-      <p>Fill out a quick application below. We'll review your goals, assess where you are now, and map out a plan to get you where you want to be.</p>
-      <a href="https://tally.so/r/PdEg7d" target="_blank" rel="noopener" class="btn btn--primary">Apply Below</a>
-      <p class="hero__micro" style="margin-top:16px">No commitment required</p>
+      <p>Fill out a quick application. We'll review your goals, assess where you are now, and map out a plan to get you where you want to be.</p>
+      <a href="https://tally.so/r/PdEg7d" target="_blank" rel="noopener" class="btn btn--primary">Apply Now</a>
     </div>
   </section>
 
@@ -820,8 +890,9 @@
     </p>
   </footer>
 
-  <!-- ════════════ SCROLL ANIMATIONS ════════════ -->
+  <!-- ════════════ SCRIPTS ════════════ -->
   <script>
+    // Scroll animations
     document.addEventListener('DOMContentLoaded', function () {
       var targets = document.querySelectorAll('.animate');
       if ('IntersectionObserver' in window) {
@@ -838,6 +909,43 @@
         targets.forEach(function (el) { el.classList.add('visible'); });
       }
     });
+
+    // Lazy-load iframes when expanded
+    function lazyLoadIframes(container) {
+      container.querySelectorAll('iframe[data-src]').forEach(function (iframe) {
+        iframe.src = iframe.getAttribute('data-src');
+        iframe.removeAttribute('data-src');
+      });
+    }
+
+    // Toggle video testimonials
+    function toggleTestimonials(btn) {
+      var grid = document.getElementById('more-testimonials');
+      var isExpanded = grid.classList.contains('expanded');
+      if (isExpanded) {
+        grid.classList.remove('expanded');
+        btn.classList.remove('expanded');
+      } else {
+        grid.classList.add('expanded');
+        btn.classList.add('expanded');
+        lazyLoadIframes(grid);
+      }
+    }
+
+    // Toggle transformations (ready for when more are added)
+    function toggleTransformations(btn) {
+      var grid = document.getElementById('more-transformations');
+      if (grid) {
+        var isExpanded = grid.classList.contains('expanded');
+        if (isExpanded) {
+          grid.classList.remove('expanded');
+          btn.classList.remove('expanded');
+        } else {
+          grid.classList.add('expanded');
+          btn.classList.add('expanded');
+        }
+      }
+    }
   </script>
 
 </body>
