@@ -113,8 +113,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(200,168,110,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 100%, rgba(200,168,110,0.04) 0%, transparent 50%);
+        radial-gradient(ellipse at 50% 0%, rgba(126,200,200,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(126,200,200,0.04) 0%, transparent 50%);
     }
 
     .hero__content {
@@ -132,12 +132,13 @@
 
     .hero__tagline {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      font-size: clamp(0.6rem, 1.5vw, 1rem);
       font-weight: 700;
-      letter-spacing: 8px;
+      letter-spacing: 6px;
       text-transform: uppercase;
       color: #7ec8c8;
       margin-bottom: 32px;
+      white-space: nowrap;
     }
 
     .hero__tagline span {
@@ -182,7 +183,7 @@
       background: #111;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(200,168,110,0.15);
+      border: 1px solid rgba(126,200,200,0.15);
       box-shadow: 0 8px 40px rgba(0,0,0,0.5);
     }
 
@@ -218,7 +219,7 @@
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      border: 2px solid rgba(200,168,110,0.3);
+      border: 2px solid rgba(126,200,200,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -271,7 +272,7 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: rgba(200,168,110,0.15);
+      background: rgba(126,200,200,0.15);
       border: 2px solid #7ec8c8;
     }
 
@@ -286,7 +287,7 @@
     /* ── Section Divider ── */
     .section-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(200,168,110,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(126,200,200,0.2), transparent);
       max-width: 600px;
       margin: 0 auto;
     }
@@ -320,7 +321,7 @@
       border-radius: 12px;
       overflow: hidden;
       background: #1a1a1a;
-      border: 1px solid rgba(200,168,110,0.08);
+      border: 1px solid rgba(126,200,200,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -420,7 +421,7 @@
       border-radius: 12px;
       overflow: hidden;
       background: #111;
-      border: 1px solid rgba(200,168,110,0.08);
+      border: 1px solid rgba(126,200,200,0.08);
     }
 
     .video-testimonial__wrapper {
@@ -490,7 +491,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(200,168,110,0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 50% 50%, rgba(126,200,200,0.06) 0%, transparent 70%);
     }
 
     .cta-section__content {
@@ -521,120 +522,6 @@
       padding: 22px 56px;
     }
 
-    /* ── Programs Section ── */
-    .programs {
-      padding: 100px 24px;
-      background: #0a0a0a;
-    }
-
-    .programs__header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-
-    .programs__header h2 {
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-    }
-
-    .programs__header h2 .highlight {
-      color: #7ec8c8;
-    }
-
-    .programs__header p {
-      color: #999;
-      font-size: 1.1rem;
-      margin-top: 16px;
-    }
-
-    .programs__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    .program-card {
-      background: #111111;
-      border: 1px solid rgba(200,168,110,0.1);
-      border-radius: 16px;
-      padding: 40px 32px;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.3s ease;
-    }
-
-    .program-card:hover {
-      border-color: rgba(200,168,110,0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    }
-
-    .program-card--featured {
-      border-color: rgba(200,168,110,0.3);
-      position: relative;
-    }
-
-    .program-card--featured::after {
-      content: 'Most Popular';
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #7ec8c8, #5ba8a8);
-      color: #0a0a0a;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      padding: 4px 16px;
-      border-radius: 100px;
-      white-space: nowrap;
-    }
-
-    .program-card__title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-
-    .program-card__desc {
-      color: #888;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 24px;
-      flex: 1;
-    }
-
-    .program-card__features {
-      list-style: none;
-      margin-bottom: 32px;
-    }
-
-    .program-card__features li {
-      position: relative;
-      padding-left: 24px;
-      margin-bottom: 10px;
-      color: #bbb;
-      font-size: 0.85rem;
-    }
-
-    .program-card__features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #7ec8c8;
-      font-weight: 700;
-    }
-
-    .program-card .btn {
-      width: 100%;
-      padding: 16px;
-      font-size: 0.85rem;
-    }
-
     /* ── Divider ── */
     .divider {
       width: 60px;
@@ -648,7 +535,7 @@
     .footer {
       padding: 40px 24px;
       background: #050505;
-      border-top: 1px solid rgba(200,168,110,0.08);
+      border-top: 1px solid rgba(126,200,200,0.08);
       text-align: center;
     }
 
@@ -674,12 +561,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .programs__grid {
-        grid-template-columns: 1fr;
-        max-width: 450px;
-        margin: 0 auto;
-      }
-
       .video-testimonials__grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
@@ -700,8 +581,8 @@
       }
 
       .hero__tagline {
-        font-size: 0.7rem;
-        letter-spacing: 5px;
+        font-size: 0.55rem;
+        letter-spacing: 3px;
         margin-bottom: 24px;
       }
 
@@ -742,14 +623,13 @@
         font-size: 0.95rem;
       }
 
-      .transformations, .video-testimonials, .cta-section, .programs {
+      .transformations, .video-testimonials, .cta-section {
         padding: 60px 16px;
       }
 
       .transformations__header h2,
       .video-testimonials__header h2,
-      .cta-section h2,
-      .programs__header h2 {
+      .cta-section h2 {
         font-size: 1.5rem;
       }
 
@@ -769,16 +649,6 @@
       .video-testimonial--vertical {
         max-width: 200px;
         margin: 0 auto;
-      }
-
-      .programs__grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-        gap: 24px;
-      }
-
-      .program-card {
-        padding: 32px 24px;
       }
 
       .cta-section .btn {
@@ -824,12 +694,12 @@
   <section class="hero">
     <div class="hero__content">
       <img src="logo.png" alt="MickMoves Coaching" class="hero__logo">
-      <p class="hero__tagline">Mobility <span>x</span> Strength <span>x</span> Aesthetics</p>
+      <p class="hero__tagline">Mobility <span>&times;</span> Strength <span>&times;</span> Aesthetics</p>
       <h1 class="hero__title">
         Develop strength, mobility, and athleticism with a system designed to help you move better, look better, and feel better.
       </h1>
       <div class="hero__cta-wrapper">
-        <a href="https://calendly.com/mzfitness8/action-plan-call" target="_blank" rel="noopener" class="btn btn--primary">Book a Free Consultation</a>
+        <a href="https://tally.so/r/PdEg7d" target="_blank" rel="noopener" class="btn btn--primary">Apply Now</a>
       </div>
     </div>
   </section>
@@ -838,7 +708,7 @@
   <section class="vsl">
     <div class="vsl__container">
       <div class="vsl__video-wrapper">
-        <iframe src="https://www.youtube-nocookie.com/embed/IUKpN7YeKlc?rel=0&modestbranding=1&playsinline=1&fs=1&origin=file://" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/bE-gOmeZozo?rel=0&modestbranding=1&playsinline=1&fs=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </div>
   </section>
@@ -884,7 +754,7 @@
             <img src="transformation-2.png" alt="Client body transformation - before and after">
           </div>
         </div>
-        <!-- Transformation 3 — save the dark-haired guy image as transformation-3.png -->
+        <!-- Transformation 3 -->
         <div class="transformation-card animate delay-2">
           <div class="transformation-card__image">
             <img src="transformation-3.png" alt="Client body transformation - before and after">
@@ -894,6 +764,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <!-- ════════════ VIDEO TESTIMONIALS ════════════ -->
   <section class="video-testimonials">
@@ -932,57 +804,9 @@
       <p class="section-label">Take the First Step</p>
       <div class="divider"></div>
       <h2>Ready to <span class="highlight">Transform</span>?</h2>
-      <p>Book a free consultation call. We'll discuss your goals, assess where you are now, and map out a plan to get you where you want to be.</p>
-      <a href="https://calendly.com/mzfitness8/action-plan-call" target="_blank" rel="noopener" class="btn btn--primary">Book Your Free Consultation</a>
+      <p>Fill out a quick application below. We'll review your goals, assess where you are now, and map out a plan to get you where you want to be.</p>
+      <a href="https://tally.so/r/PdEg7d" target="_blank" rel="noopener" class="btn btn--primary">Apply Below</a>
       <p class="hero__micro" style="margin-top:16px">No commitment required</p>
-    </div>
-  </section>
-
-  <!-- ════════════ BUY MY PROGRAMS ════════════ -->
-  <section class="programs">
-    <div class="container">
-      <div class="programs__header">
-        <p class="section-label">Programs</p>
-        <div class="divider"></div>
-        <h2>Shop <span class="highlight">Programs</span></h2>
-        <p>Ready-made programs for every level — start training today.</p>
-      </div>
-      <div class="programs__grid">
-        <!-- Program 1 -->
-        <div class="program-card animate">
-          <div class="program-card__title">Starter Program</div>
-          <p class="program-card__desc">A structured introduction to building strength, mobility, and an athletic foundation.</p>
-          <ul class="program-card__features">
-            <li>Full training program</li>
-            <li>Exercise video library</li>
-            <li>Progression guidelines</li>
-          </ul>
-          <a href="#" class="btn btn--outline">Learn More</a>
-        </div>
-        <!-- Program 2 -->
-        <div class="program-card program-card--featured animate delay-1">
-          <div class="program-card__title">Complete System</div>
-          <p class="program-card__desc">The full system for building a strong, mobile, and aesthetic physique with progressive programming.</p>
-          <ul class="program-card__features">
-            <li>Multi-phase training plan</li>
-            <li>Mobility routines included</li>
-            <li>Nutrition guidelines</li>
-            <li>Exercise video library</li>
-          </ul>
-          <a href="#" class="btn btn--primary">Learn More</a>
-        </div>
-        <!-- Program 3 -->
-        <div class="program-card animate delay-2">
-          <div class="program-card__title">Mobility Focus</div>
-          <p class="program-card__desc">Targeted mobility and movement work to eliminate pain, unlock range of motion, and move freely.</p>
-          <ul class="program-card__features">
-            <li>Daily mobility flows</li>
-            <li>Joint health protocols</li>
-            <li>Follow-along videos</li>
-          </ul>
-          <a href="#" class="btn btn--outline">Learn More</a>
-        </div>
-      </div>
     </div>
   </section>
 
